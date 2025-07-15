@@ -1,4 +1,4 @@
-resource "aws_iam_group_policy_attachment" "cris"{
-name    = "attach"
-group   = aws_iam_group.cris.s3-attach
-user    = aws_iam_user.cris.prince
+resource "aws_iam_user_policy_attachment" "cris"{
+  user   = aws_iam_group.cris.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+}
